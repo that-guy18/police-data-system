@@ -1,0 +1,12 @@
+{
+  "name": "police-name-matching-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for police name matching system",
+  "scripts": {
+    "dev": "live-server --port=3000",
+    "build": "echo 'No build process needed for static files'"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Data System - Name Matching Enhancement</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Auth Section -->
+    <section id="auth-section" class="auth-section">
+        <div class="auth-container">
+            <div class="auth-header">
+                <h1>🔒 Police Data System</h1>
+                <p>Name Matching Enhancement Portal</p>
+            </div>
+            
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                
+                <button type="submit" id="login-btn" class="login-btn">
+                    <span>Login</span>
+                    <div class="loading-spinner hidden" id="login-spinner"></div>
+                </button>
+            </form>
+
+            <div class="demo-credentials">
+                <h3>Demo Credentials:</h3>
+                <div class="credential-list">
+                    <div class="credential-item">
+                        <strong>Admin User:</strong>
+                        <span>admin / admin123</span>
+                    </div>
+                    <div class="credential-item">
+                        <strong>Officer 1:</strong>
+                        <span>officer1 / officer123</span>
+                    </div>
+                    <div class="credential-item">
+                        <strong>Officer 2:</strong>
+                        <span>officer2 / officer123</span>
+                    </div>
+                </div>
+            </div>
+
+            <button id="reset-demo-btn" class="reset-btn">
+                Reset Demo Data
+            </button>
+
+            <div id="auth-messages"></div>
+        </div>
+    </section>
+
+    <!-- Main App -->
+    <div id="main-app" class="hidden">
+        <header>
+            <div class="container header-content">
+                <div class="logo">
+                    <span>👮 Police Data System</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#search" class="nav-link">Name Search</a></li>
+                        <li><a href="#features" class="nav-link">Features</a></li>
+                        <li><a href="#training" class="nav-link">Training</a></li>
+                        <li><a href="#admin" class="nav-link">Admin</a></li>
+                    </ul>
+                </nav>
+                <div id="user-info" class="user-info">
+                    <!-- Dynamic content -->
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Enhancing Name Matching Accuracy</h1>
+                <p>Advanced fuzzy matching and phonetic algorithms to improve record linkage in police databases</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Search Section -->
+             <!-- Add this inside your search section -->
+<div style="margin: 1rem 0; padding: 1rem; background: #d4edda; border-radius: 4px;">
+    <button onclick="forceShowResults()" style="background: #155724; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-right: 1rem;">
+        🚨 Test Display
+    </button>
+    <button onclick="debugSearch()" style="background: #004085; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">
+        🐛 Debug Search
+    </button>
+    <small style="display: block; margin-top: 0.5rem; color: #155724;">
+        Test buttons - Click "Test Display" to see if results show up
+    </small>
+</div>
+            <section id="search" class="card">
+                <h2>🔍 Name Search</h2>
+                <div class="search-section">
+                    <div class="search-controls">
+                        <div class="form-group">
+                            <label for="name-input">Enter Name</label>
+                            <input type="text" id="name-input" placeholder="e.g., Suresh, Sureesh, Sursh" value="Suresh Kumar">
+                        </div>
+                        <div class="form-group">
+                            <label for="algorithm-select">Matching Algorithm</label>
+                            <select id="algorithm-select">
+                                <option value="combined">Combined Approach (Recommended)</option>
+                                <option value="fuzzy">Fuzzy Matching</option>
+                                <option value="phonetic">Phonetic Matching</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="threshold-select">Match Threshold</label>
+                            <select id="threshold-select">
+                                <option value="0.3">Low (30%)</option>
+                                <option value="0.5" selected>Medium (50%)</option>
+                                <option value="0.7">High (70%)</option>
+                            </select>
+                        </div>
+                        <button id="search-btn" class="search-btn">
+                            Search Database
+                        </button>
+                    </div>
+                    <div class="search-results">
+                        <h3>Search Results</h3>
+                        <div id="search-results" class="results">
+                            <p class="placeholder">Enter a name and click search to see results</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section id="features" class="card">
+                <h2>🚀 System Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Fuzzy Matching</h3>
+                        <p>Find names that look similar despite spelling variations and typos</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎵</div>
+                        <h3>Phonetic Search</h3>
+                        <p>Match names based on pronunciation, not just spelling</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>Transliteration Standard</h3>
+                        <p>Consistent rules for writing Hindi names in English</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3>Bilingual Support</h3>
+                        <p>Search in both Hindi and English scripts seamlessly</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>Auto-Correction</h3>
+                        <p>Automatically fix common typing mistakes in names</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Confidence Scoring</h3>
+                        <p>See how closely each match aligns with your search</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Add Record Section -->
+            <section class="card">
+                <h2>📝 Add New Record</h2>
+                <div class="record-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="record-name">Full Name</label>
+                            <input type="text" id="record-name" placeholder="Enter full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="record-type">Person Type</label>
+                            <select id="record-type">
+                                <option value="suspect">Suspect</option>
+                                <option value="victim">Victim</option>
+                                <option value="witness">Witness</option>
+                                <option value="contact">Contact</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="record-case">Case Number</label>
+                            <input type="text" id="record-case" placeholder="e.g., CASE-2024-001">
+                        </div>
+                        <div class="form-group">
+                            <label for="record-department">Department</label>
+                            <input type="text" id="record-department" placeholder="e.g., District 1">
+                        </div>
+                    </div>
+                    <button id="add-record-btn" class="add-record-btn">
+                        Add Record
+                    </button>
+                </div>
+            </section>
+
+            <!-- Admin Tools Section -->
+            <section id="admin" class="card">
+                <h2>⚙️ Administrative Tools</h2>
+                <div class="admin-section">
+                    <div class="admin-controls">
+                        <div class="form-group">
+                            <label for="standardize-input">Name to Standardize</label>
+                            <input type="text" id="standardize-input" placeholder="Enter name to standardize">
+                        </div>
+                        <button id="standardize-btn" class="standardize-btn">
+                            Standardize Name
+                        </button>
+                        
+                        <div class="form-group" style="margin-top: 2rem;">
+                            <label for="algorithm-test">Test Matching Algorithms</label>
+                            <input type="text" id="algorithm-test" placeholder="Enter first name" value="Suresh">
+                            <input type="text" id="algorithm-test2" placeholder="Enter second name" value="Sureesh" style="margin-top: 0.5rem;">
+                        </div>
+                        <button id="test-algorithm-btn" class="test-algorithm-btn">
+                            Test Similarity
+                        </button>
+                    </div>
+                    <div class="admin-results">
+                        <h3>Results</h3>
+                        <div id="admin-results">
+                            <p class="placeholder">Administrative functions will appear here</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <div class="container">
+                <p>Police Data System - Enhancing Name Matching Accuracy</p>
+                <p>Designed to improve record linkage and investigation efficiency</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="loading-spinner large"></div>
+            <p>Processing...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
