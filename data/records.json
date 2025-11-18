@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "original_name": "Suresh Kumar",
+    "standardized_name": "Suresh Kumar",
+    "person_type": "suspect",
+    "case_number": "CASE-2024-001",
+    "department": "District 1",
+    "created_by": 2,
+    "created_by_name": "officer1",
+    "is_active": true,
+    "created_at": "2024-01-15T10:30:00.000Z"
+  },
+  {
+    "id": 2,
+    "original_name": "Sureesh Kumar",
+    "standardized_name": "Suresh Kumar",
+    "person_type": "suspect",
+    "case_number": "CASE-2024-001",
+    "department": "District 1",
+    "created_by": 2,
+    "created_by_name": "officer1",
+    "is_active": true,
+    "created_at": "2024-01-15T11:15:00.000Z"
+  },
+  {
+    "id": 3,
+    "original_name": "Sursh Kumar",
+    "standardized_name": "Suresh Kumar",
+    "person_type": "witness",
+    "case_number": "CASE-2024-001",
+    "department": "District 1",
+    "created_by": 2,
+    "created_by_name": "officer1",
+    "is_active": true,
+    "created_at": "2024-01-15T12:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "original_name": "Suresh Kumar Yadav",
+    "standardized_name": "Suresh Kumar Yadav",
+    "person_type": "victim",
+    "case_number": "CASE-2024-002",
+    "department": "District 2",
+    "created_by": 3,
+    "created_by_name": "officer2",
+    "is_active": true,
+    "created_at": "2024-01-16T09:45:00.000Z"
+  },
+  {
+    "id": 5,
+    "original_name": "Ramesh Singh",
+    "standardized_name": "Ramesh Singh",
+    "person_type": "suspect",
+    "case_number": "CASE-2024-003",
+    "department": "District 1",
+    "created_by": 2,
+    "created_by_name": "officer1",
+    "is_active": true,
+    "created_at": "2024-01-16T14:20:00.000Z"
+  },
+  {
+    "id": 6,
+    "original_name": "Ramesh Sing",
+    "standardized_name": "Ramesh Singh",
+    "person_type": "contact",
+    "case_number": "CASE-2024-003",
+    "department": "District 1",
+    "created_by": 2,
+    "created_by_name": "officer1",
+    "is_active": true,
+    "created_at": "2024-01-16T15:10:00.000Z"
+  },
+  {
+    "id": 7,
+    "original_name": "Priyanka Sharma",
+    "standardized_name": "Priyanka Sharma",
+    "person_type": "victim",
+    "case_number": "CASE-2024-004",
+    "department": "District 2",
+    "created_by": 3,
+    "created_by_name": "officer2",
+    "is_active": true,
+    "created_at": "2024-01-17T08:30:00.000Z"
+  },
+  {
+    "id": 8,
+    "original_name": "Priyanka Sharma",
+    "standardized_name": "Priyanka Sharma",
+    "person_type": "witness",
+    "case_number": "CASE-2024-005",
+    "department": "District 2",
+    "created_by": 3,
+    "created_by_name": "officer2",
+    "is_active": true,
+    "created_at": "2024-01-17T10:15:00.000Z"
+  },
+  {
+    "id": 9,
+    "original_name": "Anjali Singh",
+    "standardized_name": "Anjali Singh",
+    "person_type": "victim",
+    "case_number": "CASE-2024-006",
+    "department": "District 1",
+    "created_by": 2,
+    "created_by_name": "officer1",
+    "is_active": true,
+    "created_at": "2024-01-18T13:45:00.000Z"
+  },
+  {
+    "id": 10,
+    "original_name": "Anjali Sing",
+    "standardized_name": "Anjali Singh",
+    "person_type": "witness",
+    "case_number": "CASE-2024-006",
+    "department": "District 1",
+    "created_by": 2,
+    "created_by_name": "officer1",
+    "is_active": true,
+    "created_at": "2024-01-18T14:30:00.000Z"
+  }
+]
